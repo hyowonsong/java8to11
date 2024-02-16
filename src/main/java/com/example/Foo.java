@@ -1,10 +1,20 @@
 package com.example;
 
-import java.util.function.Function;
 import java.util.function.IntConsumer;
 
-public class Foo {
+import static java.lang.Character.getName;
 
+public interface Foo {
+
+    void printName();
+
+    default void printNameUpperCase(){
+        System.out.println(getName().toUpperCase());
+    }
+
+    String getName();
+
+    /**
     public static void main(String[] args) {
         Foo foo = new Foo();
         foo.run();
